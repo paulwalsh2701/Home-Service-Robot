@@ -137,7 +137,6 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/add_markers_node.cpp)
 
 add_executable(add_markers src/add_markers.cpp)
-add_executable(add_markers src/add_markers_VO.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -155,7 +154,6 @@ add_executable(add_markers src/add_markers_VO.cpp)
 # )
 
 target_link_libraries(add_markers ${catkin_LIBRARIES})
-target_link_libraries(add_markers_VO ${catkin_LIBRARIES})
 
 #############
 ## Install ##
