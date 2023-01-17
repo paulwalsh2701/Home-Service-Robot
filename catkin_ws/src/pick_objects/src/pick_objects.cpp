@@ -25,6 +25,7 @@ int main(int argc, char** argv){
 
   // Define a position and orientation for the robot to reach
   goal1.target_pose.pose.position.x = 1.0;
+  goal1.target_pose.pose.position.y = 2.0;
   goal1.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
@@ -41,9 +42,12 @@ int main(int argc, char** argv){
     ROS_INFO("The base failed to move to goal 1 for some reason");
 
   // Wait 5 sec before next move
-  while(!ac.waitForServer(ros::Duration(5.0))){
-    ROS_INFO("Waiting for 5 secs before next move");
-  }
+  ROS_INFO("Waiting for 5 secs before next move");
+  ros::Duration(5.0).sleep();
+
+  //while(!ac.waitForServer(ros::Duration(5.0))){
+    //ROS_INFO("Waiting for 5 secs before next move");
+  //}
 
   move_base_msgs::MoveBaseGoal goal2;
 
@@ -53,6 +57,7 @@ int main(int argc, char** argv){
 
   // Define a position and orientation for the robot to reach
   goal2.target_pose.pose.position.x = 2.0;
+  goal2.target_pose.pose.position.y = 6.0;
   goal2.target_pose.pose.orientation.w = 1.0;
 
    // Send the goal position and orientation for the robot to reach
